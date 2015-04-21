@@ -16,11 +16,17 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
+    <!-- About phone screen -->
     <!-- Benzo version -->
     <string name="benzo_version">Benzo version</string>
     <!-- About screen, build date -->
     <string name="about_build_date">Build date</string>
     <!-- About screen, kernel version -->
     <string name="about_kernel_version">Kernel version</string>
+    <!-- SELinux status -->
+    <string name="about_selinux_status">SELinux status</string>
+    <string name="selinux_status_disabled">Disabled</string>
+    <string name="selinux_status_permissive">Permissive</string>
+    <string name="selinux_status_enforcing">Enforcing</string>
 
 </resources>
