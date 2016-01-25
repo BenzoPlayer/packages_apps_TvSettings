@@ -57,4 +57,8 @@
     <string name="reset_launcher_description">By resetting the default home screen, you will be able to choose an alternate home screen (i.e Trebuchet).\n\nWould you like to reset the default home screen?</string>
     <string name="reset_launcher_tip">Press the home button to bring up the home screen selection dialog.</string>
 
+    <!-- GCC info -->
+    <string name="sm_android">Gcc android</string>
+    <string name="sm_flags">Build flags</string>
+
 </resources>

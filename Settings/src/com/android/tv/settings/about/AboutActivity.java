@@ -79,6 +79,8 @@ public class AboutActivity extends SettingsLayoutActivity {
     private static final String FILENAME_PROC_VERSION = "/proc/version";
     private static final String LOG_TAG = "AboutSettings";
     private static final String PROPERTY_SELINUX_STATUS = "ro.build.selinux";
+    private static final String PROPERTY_SM_AND = "sm_android";
+    private static final String PROPERTY_SM_FLAGS = "sm_flags";
 
     /**
      * Intent action of SettingsLicenseActivity (for displaying open source licenses.)
@@ -354,6 +356,18 @@ public class AboutActivity extends SettingsLayoutActivity {
                 .title(getString(R.string.about_build_date))
                 .description(getBuildDate())
                 .build());
+        if (!SystemProperties.get(PROPERTY_SM_AND).equals("")) {
+            header.add(new Layout.Status.Builder(res)
+                    .title(getString(R.string.sm_android))
+                    .description(getGccVerDate())
+                    .build());
+        }
+        if (!SystemProperties.get(PROPERTY_SM_FLAGS).equals("")) {
+            header.add(new Layout.Status.Builder(res)
+                    .title(getString(R.string.sm_flags))
+                    .description(getGccBuildFlags())
+                    .build());
+        }
         if (!SystemProperties.get(PROPERTY_SELINUX_STATUS).equals("")) {
             header.add(new Layout.Status.Builder(res)
                     .title(getString(R.string.about_selinux_status))
