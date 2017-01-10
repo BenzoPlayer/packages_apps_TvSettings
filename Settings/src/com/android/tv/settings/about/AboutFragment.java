@@ -70,6 +70,8 @@ public class AboutFragment extends LeanbackPreferenceFragment implements
     private static final String KEY_SAFETY_LEGAL = "safetylegal";
     private static final String KEY_DEVICE_NAME = "device_name";
     private static final String KEY_RESTART = "restart";
+    private static final String PROPERTY_BENZO_VERSION = "ro.benzo.version";
+    private static final String KEY_BENZO_VERSION = "benzo_version";
 
     static final int TAPS_TO_BE_A_DEVELOPER = 7;
 
@@ -186,6 +188,11 @@ public class AboutFragment extends LeanbackPreferenceFragment implements
         // Remove regulatory information if none present.
         final Preference regulatoryPref = findPreference(KEY_REGULATORY_INFO);
         PreferenceUtils.resolveSystemActivityOrRemove(getActivity(), screen, regulatoryPref, 0);
+
+        // Remove Benzo version is not set
+        if (TextUtils.isEmpty(SystemProperties.get(PROPERTY_BENZO_VERSION))) {
+            removePreference(findPreference(KEY_BENZO_VERSION));
+        }
     }
 
     private void removePreference(@Nullable Preference preference) {
